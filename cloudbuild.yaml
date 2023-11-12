@@ -8,7 +8,10 @@ steps:
       - "my-first-vm"
       - "--command=cd myProject/StoredProcedures && git pull origin main && mvn clean install"
     env:
-      - "GCE_ACCOUNT_FILE=/workspace/gce-account.json"
-    volumes:
-      - "/workspace"
+      GCE_ACCOUNT_FILE: "/workspace/gce-account.json"
+
+options:
+  env:
+    GCE_ACCOUNT_FILE: "/workspace/gce-account.json"
+
 
