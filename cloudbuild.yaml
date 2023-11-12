@@ -1,15 +1,14 @@
-
-
 steps:
   - name: "gcr.io/cloud-builders/gcloud"
     args:
       - "compute"
       - "ssh"
-      - "--project=lab1-404213"  # Замініть на свій ідентифікатор проекту
-      - "--zone=us-central1-c"  # Замініть на свою зону
-      - "my-first-vm"  # Замініть на ім'я вашої віртуальної машини
-      - "--command=cd myProject/StoredProcedures && git main && mvn clean install"
+      - "--project=lab1-404213"
+      - "--zone=us-central1-c"
+      - "my-first-vm"
+      - "--command=cd myProject/StoredProcedures && git pull origin main && mvn clean install"
     env:
       - "GCE_ACCOUNT_FILE=/workspace/gce-account.json"
     volumes:
       - "/workspace"
+
