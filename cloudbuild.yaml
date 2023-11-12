@@ -1,17 +1,17 @@
 steps:
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: gcr.io/cloud-builders/gcloud
     args:
-      - "compute"
-      - "ssh"
-      - "--project=lab1-404213"
-      - "--zone=us-central1-c"
-      - "my-first-vm"
-      - "--command=cd myProject/StoredProcedures && git pull origin main && mvn clean install"
+      - compute
+      - ssh
+      - --project=lab1-404213
+      - --zone=us-central1-c
+      - my-first-vm
+      - --command=cd myProject/StoredProcedures && git pull origin main && mvn clean install
     env:
-      GCE_ACCOUNT_FILE: "/workspace/gce-account.json"
+      GCE_ACCOUNT_FILE: /workspace/gce-account.json
 
 options:
   env:
-    GCE_ACCOUNT_FILE: "/workspace/gce-account.json"
+    GCE_ACCOUNT_FILE: /workspace/gce-account.json
 
 
