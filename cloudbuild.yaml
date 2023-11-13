@@ -12,6 +12,6 @@ options:
   env:
     - "GCE_ACCOUNT_FILE=/workspace/gce-account.json"
 
-logsBucket: "filesfordb"  # Замініть на своє ім'я бакета
+logsBucket: "filesfordb"  
 
 
